@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import store from './store';
 
+//Store
+const state = store.getState();
 
 //State
-const state = {
-  todos: [
-    {id: 1, name: 'Render static UI', isComplete: true},
-    {id: 2, name: 'Create initial state', isComplete: true},
-    {id: 3, name: 'Render based on state', isComplete: false},
-  ]
-};
+// const state = {
+//   todos: [
+//     {id: 1, name: 'Render static UI', isComplete: true},
+//     {id: 2, name: 'Create initial state', isComplete: true},
+//     {id: 3, name: 'Render based on state', isComplete: false},
+//   ]
+// };
 
-ReactDOM.render(<App todos={state.todos}/>, document.getElementById('root'));
+ReactDOM.render(<App {...state} />, document.getElementById('root'));
 registerServiceWorker();
