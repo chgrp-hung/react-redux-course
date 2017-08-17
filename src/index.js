@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
+import {updateCurrent} from './reducers/todo';
 
 const render = () => {
   //Store
@@ -15,7 +16,7 @@ const render = () => {
     document.getElementById('root'));
 }
 
-const todoChangeHandler = (value) => store.dispatch({type: 'CURRENT_UPDATE', payload: value});
+const todoChangeHandler = (value) => store.dispatch(updateCurrent(value));
 
 //State
 // const state = {
