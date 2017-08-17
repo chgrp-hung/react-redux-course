@@ -5,19 +5,24 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 import {updateCurrent} from './reducers/todo';
+import {bindActionCreators} from 'redux';
 
 const render = () => {
   //Store
   const state = store.getState();
   ReactDOM.render(<App todos={state.todos}
       currentTodo={state.currentTodo}
-      changeCurrent = {todoChangeHandler}
+      // changeCurrent = {actions.todoChangeHandler}  -- replace this with the shorthand key in l:24 below
+      changeCurrent = {actions.updateCurrent}
     />,
     document.getElementById('root'));
 }
 
-const todoChangeHandler = (value) => store.dispatch(updateCurrent(value));
+// const todoChangeHandler = (value) => store.dispatch(updateCurrent(value));
 
+const actions = bindActionCreators(
+  //todoChangeHandler: updateCurrent  - replace this with the shorthand syntax {updateCurrent}
+  {updateCurrent}, store.dispatch);
 //State
 // const state = {
 //   todos: [
