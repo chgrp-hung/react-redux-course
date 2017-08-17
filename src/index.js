@@ -5,9 +5,11 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
-//Store
-const state = store.getState();
-
+const render = () => {
+  //Store
+  const state = store.getState();
+  ReactDOM.render(<App {...state} />, document.getElementById('root'));
+}
 //State
 // const state = {
 //   todos: [
@@ -17,5 +19,10 @@ const state = store.getState();
 //   ]
 // };
 
-ReactDOM.render(<App {...state} />, document.getElementById('root'));
+render();
+store.subscribe(render);
+
+setTimeout(() => {
+  store.dispatch({type: 'TODO_ADD', payload: {id: 5, name: "New todo", isComplete: false}});
+}, 1000)
 registerServiceWorker();
