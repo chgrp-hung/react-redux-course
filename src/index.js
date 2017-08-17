@@ -8,8 +8,15 @@ import store from './store';
 const render = () => {
   //Store
   const state = store.getState();
-  ReactDOM.render(<App {...state} />, document.getElementById('root'));
+  ReactDOM.render(<App todos={state.todos}
+      currentTodo={state.currentTodo}
+      changeCurrent = {todoChangeHandler}
+    />,
+    document.getElementById('root'));
 }
+
+const todoChangeHandler = (value) => store.dispatch({type: 'CURRENT_UPDATE', payload: value});
+
 //State
 // const state = {
 //   todos: [
@@ -19,10 +26,14 @@ const render = () => {
 //   ]
 // };
 
+
+
 render();
 store.subscribe(render);
 
-setTimeout(() => {
-  store.dispatch({type: 'TODO_ADD', payload: {id: 5, name: "New todo", isComplete: false}});
-}, 1000)
+
+// temporary to test subscribe
+// setTimeout(() => {
+//   store.dispatch({type: 'TODO_ADD', payload: {id: 5, name: "New todo", isComplete: false}});
+// }, 1000)
 registerServiceWorker();

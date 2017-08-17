@@ -17,7 +17,10 @@ class App extends Component {
           React UI Todo demo.
         </p>
         <div className="Todo-App">
-          <TodoForm />
+          <TodoForm
+            currentTodo={this.props.currentTodo}
+            changeCurrent={this.props.changeCurrent}
+          />
           <TodoList todos={this.props.todos}/>
         </div>
 
