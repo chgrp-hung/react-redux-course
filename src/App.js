@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import {connect} from 'react-redux';
 
 
 class App extends Component {
@@ -29,4 +30,7 @@ class App extends Component {
   }
 }
 
-export default App;
+// export default App;
+const mapStateToProps = (state) => state;
+const ConnectedApp = connect(mapStateToProps)(App) //(connect takes argument (mapStateToProps) and return new function that accepts App)
+export default ConnectedApp;

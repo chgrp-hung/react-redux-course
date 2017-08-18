@@ -6,23 +6,32 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 import {updateCurrent} from './reducers/todo';
 import {bindActionCreators} from 'redux';
+import {Provider} from 'react-redux';
 
-const render = () => {
-  //Store
-  const state = store.getState();
-  ReactDOM.render(<App todos={state.todos}
-      currentTodo={state.currentTodo}
-      // changeCurrent = {actions.todoChangeHandler}  -- replace this with the shorthand key in l:24 below
-      changeCurrent = {actions.updateCurrent}
-    />,
-    document.getElementById('root'));
-}
+
+const actions = bindActionCreators({updateCurrent}, store.dispatch);
+// const render = () => {
+//   //Store
+//   const state = store.getState();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App changeCurrent= {actions.updateCurrent}/>
+  </Provider>,
+document.getElementById('root'));
+
+  // To change by wrapping our app with the Provider from react-redux
+  // ReactDOM.render(<App todos={state.todos}
+  //     currentTodo={state.currentTodo}
+  //     // changeCurrent = {actions.todoChangeHandler}  -- replace this with the shorthand key in l:24 below
+  //     changeCurrent = {actions.updateCurrent}
+  //   />,
+  //   document.getElementById('root'));
+// }
 
 // const todoChangeHandler = (value) => store.dispatch(updateCurrent(value));
 
-const actions = bindActionCreators(
-  //todoChangeHandler: updateCurrent  - replace this with the shorthand syntax {updateCurrent}
-  {updateCurrent}, store.dispatch);
+
 //State
 // const state = {
 //   todos: [
@@ -33,9 +42,9 @@ const actions = bindActionCreators(
 // };
 
 
-
-render();
-store.subscribe(render);
+// To be replaced with the Provider (react-redux)
+// render();  //initial render
+// store.subscribe(render);
 
 
 // temporary to test subscribe
