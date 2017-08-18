@@ -4,7 +4,6 @@ import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import {connect} from 'react-redux';
-import {updateCurrent} from './reducers/todo';
 
 class App extends Component {
   render() {
@@ -18,11 +17,8 @@ class App extends Component {
           React UI Todo demo.
         </p>
         <div className="Todo-App">
-          <TodoForm
-            currentTodo={this.props.currentTodo}
-            changeCurrent={this.props.updateCurrent}
-          />
-          <TodoList todos={this.props.todos}/>
+          <TodoForm />
+          <TodoList />
         </div>
 
       </div>
@@ -30,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default connect((state) => state, {updateCurrent})(App) //(connect takes argument (mapStateToProps) and return new function that accepts App)
+export default App;
