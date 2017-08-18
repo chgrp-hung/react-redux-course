@@ -30,9 +30,4 @@ class App extends Component {
   }
 }
 
-// export default App;
-// const actions = bindActionCreators({updateCurrent}, store.dispatch);
-const mapStateToProps = (state) => state;
-const mapDispatchToProps = {updateCurrent};
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App) //(connect takes argument (mapStateToProps) and return new function that accepts App)
-export default ConnectedApp;
+export default connect((state) => state, {updateCurrent})(App) //(connect takes argument (mapStateToProps) and return new function that accepts App)
