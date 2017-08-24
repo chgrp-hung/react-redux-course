@@ -1,11 +1,11 @@
 
 import {getTodos} from '../lib/todoService';
 
+// {id: 1, name: 'Render static UI', isComplete: true},
+// {id: 2, name: 'Create initial state', isComplete: true},
+// {id: 3, name: 'Render based on state', isComplete: false},
 const initState = {
   todos: [],
-    // {id: 1, name: 'Render static UI', isComplete: true},
-    // {id: 2, name: 'Create initial state', isComplete: true},
-    // {id: 3, name: 'Render based on state', isComplete: false},
   currentTodo: ''
 }
 
