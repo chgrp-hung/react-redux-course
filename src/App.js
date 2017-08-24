@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import Message from './components/Message';
 import {connect} from 'react-redux';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           React UI Todo demo.
         </p>
         <div className="Todo-App">
+          <Message message="Hello There" />
           <TodoForm />
           <TodoList />
         </div>
