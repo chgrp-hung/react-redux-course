@@ -11,17 +11,17 @@ const initState = {
 }
 
 const CURRENT_UPDATE = 'CURRENT_UPDATE';
-const TODO_ADD = 'TODO_ADD';
-const TODO_LOAD = 'TODO_LOAD';
+export const TODO_ADD = 'TODO_ADD';
+export const TODOS_LOAD = 'TODO_LOAD';
 
 export const updateCurrent = value => ({type: CURRENT_UPDATE, payload: value});
 
-export const loadTodos = (todos) => ({type: TODO_LOAD, payload: todos});
+export const loadTodos = (todos) => ({type: TODOS_LOAD, payload: todos});
 export const addTodo = (todo) => ({type: TODO_ADD, payload: todo});
 export const fetchTodos = () => {
   return (dispatch) => {
+    dispatch(showMessage('Loading Todos'));
     getTodos()
-      // .then(todos => console.log(todos));
       .then(todos => dispatch(loadTodos(todos)));
   }
 }
@@ -40,7 +40,7 @@ export default (state = initState, action) => {
       return {...state, currentTodo: '', todos: state.todos.concat(action.payload)};
     case CURRENT_UPDATE:
       return {...state, currentTodo:action.payload};
-    case TODO_LOAD:
+    case TODOS_LOAD:
       return {...state, todos: action.payload};
     default:
       return state;
