@@ -18,7 +18,7 @@ class App extends Component {
           React UI Todo demo.
         </p>
         <div className="Todo-App">
-          <Message message="Hello There" />
+          <Message message="" />
           <TodoForm />
           <TodoList />
         </div>

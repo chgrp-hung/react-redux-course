@@ -1,5 +1,6 @@
 
 import {getTodos, createTodo} from '../lib/todoService';
+import {showMessage} from './message';
 
 // {id: 1, name: 'Render static UI', isComplete: true},
 // {id: 2, name: 'Create initial state', isComplete: true},
@@ -27,6 +28,7 @@ export const fetchTodos = () => {
 
 export const saveTodo = (name) => {
   return (dispatch) => {
+    dispatch(showMessage('Saving Todo'));
     createTodo(name)
       .then(res => dispatch(addTodo(res)))
   }
