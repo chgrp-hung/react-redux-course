@@ -3,6 +3,6 @@
     {"id": 1, "name": "configure server", "isComplete":true},
     {"id": 2, "name": "start server", "isComplete":false},
     {"id": 3, "name": "Load data into app", "isComplete":false},
-    {"id": 3, "name": "update records", "isComplete":false}
+    {"id": 4, "name": "update records", "isComplete":false}
   ]
 }
