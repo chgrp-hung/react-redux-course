@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {fetchTodos, toggleTodo, deleteTodo} from '../reducers/todo'
+import {fetchTodos, toggleTodo, deleteTodo, getVisibleTodos} from '../reducers/todo'
 
 const TodoItem = ({id, name, isComplete, toggleTodo, deleteTodo}) => (
   <li>
@@ -35,6 +35,7 @@ class TodoList extends Component {
 };
 
 export default connect(
-  (state) => ({todos: state.todo.todos}),
+  //mapStateToProps ownProps gives access to filter passed in by app.js but not yet accessible from TodoList component
+  (state, ownProps) => ({todos: getVisibleTodos(state.todo.todos, ownProps.filter)}),
   {fetchTodos, toggleTodo, deleteTodo}
 )(TodoList);
