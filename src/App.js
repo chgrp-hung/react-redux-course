@@ -5,6 +5,8 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import Message from './components/Message';
 import {connect} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -17,12 +19,14 @@ class App extends Component {
         <p className="App-intro">
           React UI Todo demo.
         </p>
-        <div className="Todo-App">
-          <Message message="" />
-          <TodoForm />
-          <TodoList />
-        </div>
-
+        <Router>
+          <div className="Todo-App">
+            <Message message="" />
+            <TodoForm />
+            <TodoList />
+            <Footer />
+          </div>
+        </Router>
       </div>
     );
   }

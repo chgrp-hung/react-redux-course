@@ -38,7 +38,7 @@ ul {
 }
 
 li {
-  list-stype-type: none;
+  list-style-type: none;
 }
 
 .message {
@@ -51,4 +51,26 @@ li {
   left: 50%;
   margin-left: -100px;
   top: 200px;
+}
+
+li span.delete-item {
+  visibility: hidden;
+}
+
+span.delete-item button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: red;
+}
+
+li:hover span.delete-item {
+  visibility: visible;
+}
+
+a {
+  padding-left: 2px;
+  padding-right: 2px;
 }
