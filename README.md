@@ -1,7 +1,13 @@
 
-This is the proj walkthrough for the lesson on egghead: https://egghead.io/lessons/react-keep-ui-and-state-synchronized-using-controlled-components-in-react-with-redux
+This is the proj walkthrough for the lesson on egghead:
+https://egghead.io/courses/build-a-react-app-with-redux
+https://egghead.io/lessons/react-bootstrap-a-react-application-with-yarn-create-react-app
+https://egghead.io/lessons/react-keep-ui-and-state-synchronized-using-controlled-components-in-react-with-redux
 
+https://github.com/avanslaars/egghead_react_redux_course/tree/01-bootstrap
 ========
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
