@@ -4,7 +4,6 @@ import messageReducer from './reducers/message';
 import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';  //see redux in chrome react devtools
 
-
 const reducer = combineReducers({
   todo: todoReducer,
   message: messageReducer
