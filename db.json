@@ -8,7 +8,7 @@
     {
       "id": 2,
       "name": "start server",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 3,
@@ -24,13 +24,18 @@
       "name": "onetwo",
       "isComplet": false,
       "id": 6,
-      "isComplete": false
+      "isComplete": true
     },
     {
       "name": "add new task",
       "isComplet": false,
       "id": 10,
       "isComplete": true
+    },
+    {
+      "name": "eat tacos",
+      "isComplete": false,
+      "id": 11
     }
   ]
 }
